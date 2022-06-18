@@ -4,7 +4,8 @@ import java.awt.event.KeyEvent;
  import java.lang.String;
  import javax.swing.*;
 public class ventana_principal extends javax.swing.JFrame {
-
+    
+    
  static POO objeto = new POO();
     public ventana_principal() {
         initComponents();
@@ -19,6 +20,7 @@ public class ventana_principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        educ_grupo = new javax.swing.ButtonGroup();
         Bienvenida = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -55,75 +57,69 @@ public class ventana_principal extends javax.swing.JFrame {
 
         Bienvenida.setFont(new java.awt.Font("Monospaced", 1, 24));
         Bienvenida.setForeground(new java.awt.Color(-1,true));
-        Bienvenida.setText("¡Bienvenido usuario!, registra tus datos aquí.");
+        Bienvenida.setText("¡Bienvenido, usuario!, registra tus datos aquí.");
         getContentPane().add(Bienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 770, 40));
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14));
         jLabel2.setForeground(new java.awt.Color(-1,true));
         jLabel2.setText("           Gustos musicales");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 170, -1));
 
-        jLabel4.setFont(new java.awt.Font("DialogInput", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("DialogInput", 0, 14));
         jLabel4.setForeground(new java.awt.Color(-1,true));
         jLabel4.setText("Nivel de estudios");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 260, 150, 20));
 
+        educ_grupo.add(Basica);
+        Basica.setForeground(new java.awt.Color(0, 0, 255));
         Basica.setText("Basica");
         getContentPane().add(Basica, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, 100, -1));
 
+        educ_grupo.add(Superior);
+        Superior.setForeground(new java.awt.Color(0, 0, 255));
         Superior.setText("Superior");
-        Superior.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SuperiorActionPerformed(evt);
-            }
-        });
         getContentPane().add(Superior, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, 80, -1));
 
+        educ_grupo.add(Maestria);
+        Maestria.setForeground(new java.awt.Color(0, 0, 255));
         Maestria.setText("Maestría");
-        Maestria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MaestriaActionPerformed(evt);
-            }
-        });
         getContentPane().add(Maestria, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 80, -1));
 
         Comida.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Spaghetti", "Pabellón", "Mandocas", "Choripan" }));
-        Comida.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ComidaMouseClicked(evt);
-            }
-        });
         getContentPane().add(Comida, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, 160, -1));
 
-        jLabel3.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("DialogInput", 0, 12));
         jLabel3.setForeground(new java.awt.Color(-1,true));
         jLabel3.setText("Comida favorita");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 230, 190, 20));
 
+        educ_grupo.add(Secundaria);
+        Secundaria.setForeground(new java.awt.Color(0, 0, 255));
         Secundaria.setText("Secundaria");
         getContentPane().add(Secundaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, 100, -1));
 
+        Rock.setForeground(new java.awt.Color(0, 0, 255));
         Rock.setText("Rock");
         getContentPane().add(Rock, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 293, 80, 20));
 
         Salsa.setBackground(new java.awt.Color(-1,true));
+        Salsa.setForeground(new java.awt.Color(0, 51, 255));
         Salsa.setText("Salsa");
-        Salsa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalsaActionPerformed(evt);
-            }
-        });
         getContentPane().add(Salsa, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 80, -1));
 
+        Pop.setForeground(new java.awt.Color(0, 0, 255));
         Pop.setText("Pop");
         getContentPane().add(Pop, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, 80, -1));
 
+        Reggaeton.setForeground(new java.awt.Color(0, 0, 255));
         Reggaeton.setText("Reggaeton");
         getContentPane().add(Reggaeton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, -1, -1));
 
+        Gaita.setForeground(new java.awt.Color(0, 0, 255));
         Gaita.setText("Gaita");
         getContentPane().add(Gaita, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 80, -1));
 
+        Joropo.setForeground(new java.awt.Color(0, 0, 255));
         Joropo.setText("Joropo");
         getContentPane().add(Joropo, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 80, -1));
 
@@ -162,7 +158,7 @@ public class ventana_principal extends javax.swing.JFrame {
                 ejecutar_resultado(evt);
             }
         });
-        getContentPane().add(enviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 450, 120, 40));
+        getContentPane().add(enviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 450, 140, 40));
 
         limpiar.setText("Limpiar");
         limpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -170,7 +166,7 @@ public class ventana_principal extends javax.swing.JFrame {
                 limpiar_datos(evt);
             }
         });
-        getContentPane().add(limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 450, 120, 40));
+        getContentPane().add(limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 450, 130, 40));
 
         datos.setColumns(20);
         datos.setRows(5);
@@ -314,22 +310,6 @@ getToolkit().beep();
 objeto.mensaje("Limpieza exitosa");
 }//GEN-LAST:event_limpiar_datos
 
-private void SalsaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalsaActionPerformed
-// TODO add your handling code here:
-}//GEN-LAST:event_SalsaActionPerformed
-
-private void ComidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ComidaMouseClicked
-// TODO add your handling code here:
-}//GEN-LAST:event_ComidaMouseClicked
-
-private void SuperiorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuperiorActionPerformed
-// TODO add your handling code here:
-}//GEN-LAST:event_SuperiorActionPerformed
-
-private void MaestriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MaestriaActionPerformed
-// TODO add your handling code here:
-}//GEN-LAST:event_MaestriaActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -387,6 +367,7 @@ private void MaestriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JTextArea datos;
     private javax.swing.JTextField direccion;
     private javax.swing.JTextField edad;
+    private javax.swing.ButtonGroup educ_grupo;
     private javax.swing.JButton enviar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
