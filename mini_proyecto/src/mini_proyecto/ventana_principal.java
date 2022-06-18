@@ -1,10 +1,12 @@
 
 package mini_proyecto;
+
+// Librerias
 import java.awt.event.KeyEvent;
- import java.lang.String;
- import javax.swing.*;
-public class ventana_principal extends javax.swing.JFrame {
-    
+import java.lang.String;
+import javax.swing.*;
+
+public class ventana_principal extends javax.swing.JFrame {   
     
  static POO objeto = new POO();
     public ventana_principal() {
@@ -200,6 +202,8 @@ public class ventana_principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
+    
 private void ejecutar_resultado(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ejecutar_resultado
 
 // Declaración de variables contenedoras
@@ -243,14 +247,8 @@ if(var1 < 18) {
     edad.setText("");
     datos.setText("ERROR DE SINTAXIS");
 }
-if(var1 > 18 && var1 < 60){
 
 datos.setText(var1 + "\r\n" + var2 + "\r\n" + var3 + "\r\n" + var4);
-
-
-
-
-}
 /*
 =====================
 Fin de debugger
@@ -336,7 +334,7 @@ objeto.mensaje("Limpieza exitosa");
             java.util.logging.Logger.getLogger(ventana_principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+    objeto.mensaje("Bienvenido al programa de registro.");
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
 
