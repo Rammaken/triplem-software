@@ -247,14 +247,21 @@ if(var1 < 18) {
     edad.setText("");
     datos.setText("ERROR DE SINTAXIS");
 }
+if(var1 > 18 && var1 < 60){
 
+datos.setText(var1 + "\r\n" + var2 + "\r\n" + var3 + "\r\n" + var4);
+
+
+
+
+}
 /*
 =====================
 Fin de debugger
 =====================
 */
 
-datos.setText(var1 + "\r\n" + var2 + "\r\n" + var3 + "\r\n" + var4);
+//datos.setText(var1 + "\r\n" + var2 + "\r\n" + var3 + "\r\n" + var4);
 }//GEN-LAST:event_ejecutar_resultado
 
 private void nombre_limitador(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombre_limitador
