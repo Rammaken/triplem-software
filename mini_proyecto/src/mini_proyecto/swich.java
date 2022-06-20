@@ -1,20 +1,31 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package mini_proyecto;
 import javax.swing.*;
-/**
- *
- * @author djnav
- */
+
 public class swich {
     
-    static POO objeto = new POO();
-    public void paises(){
-   
+    static POO jop = new POO();
     
-    //no supe que hacer, perdon :c
+    public void paises(){
+        int pais = 0;
+        
+        switch(pais) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+        }
     
     }
     

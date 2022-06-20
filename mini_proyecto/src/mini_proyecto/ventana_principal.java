@@ -9,7 +9,8 @@ import javax.swing.*;
 
 public class ventana_principal extends javax.swing.JFrame {   
     
- static POO objeto = new POO();
+ static POO jop = new POO();
+ static swich sc = new swich();
     public ventana_principal() {
         initComponents();
         
@@ -68,14 +69,17 @@ public class ventana_principal extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         enviar = new javax.swing.JButton();
         limpiar = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        jLabel7 = new javax.swing.JLabel();
+        txt_pais = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        txt_datos = new javax.swing.JScrollPane();
         datos = new javax.swing.JTextArea();
         Edad = new javax.swing.JLabel();
         Nombre = new javax.swing.JLabel();
         Apellido = new javax.swing.JLabel();
         Direccion = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        Direccion1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(-4144960,true));
@@ -84,105 +88,105 @@ public class ventana_principal extends javax.swing.JFrame {
         Bienvenida.setFont(new java.awt.Font("Monospaced", 1, 24));
         Bienvenida.setForeground(new java.awt.Color(-1,true));
         Bienvenida.setText("¡Bienvenido, usuario!, registra tus datos aquí.");
-        getContentPane().add(Bienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 770, 40));
+        getContentPane().add(Bienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 770, 40));
 
         jLabel4.setFont(new java.awt.Font("DialogInput", 0, 14));
         jLabel4.setForeground(new java.awt.Color(-1,true));
         jLabel4.setText("Paises que quisieras visitar:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 290, 20));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 290, 20));
 
         educ_grupo.add(Basica);
         Basica.setForeground(new java.awt.Color(0, 0, 255));
         Basica.setText("Basica");
-        getContentPane().add(Basica, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, 100, -1));
+        getContentPane().add(Basica, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 170, 100, -1));
 
         educ_grupo.add(Superior);
         Superior.setForeground(new java.awt.Color(0, 0, 255));
         Superior.setText("Superior");
-        getContentPane().add(Superior, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 170, 80, -1));
+        getContentPane().add(Superior, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 170, 80, -1));
 
         educ_grupo.add(Maestria);
         Maestria.setForeground(new java.awt.Color(0, 0, 255));
         Maestria.setText("Maestría");
-        getContentPane().add(Maestria, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, 80, -1));
+        getContentPane().add(Maestria, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 200, 80, -1));
 
         Comida.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Spaghetti", "Pabellón", "Mandocas", "Choripan" }));
-        getContentPane().add(Comida, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, 160, -1));
+        getContentPane().add(Comida, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 120, 160, -1));
 
         jLabel3.setFont(new java.awt.Font("DialogInput", 0, 12));
         jLabel3.setForeground(new java.awt.Color(-1,true));
         jLabel3.setText("Comida favorita");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, 190, 20));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 100, 190, 20));
 
         educ_grupo.add(Secundaria);
         Secundaria.setForeground(new java.awt.Color(0, 0, 255));
         Secundaria.setText("Secundaria");
-        getContentPane().add(Secundaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, 100, -1));
+        getContentPane().add(Secundaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 200, 100, -1));
 
         Rock.setForeground(new java.awt.Color(0, 0, 255));
         Rock.setText("Rock");
-        getContentPane().add(Rock, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 80, 20));
+        getContentPane().add(Rock, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 320, 80, 20));
 
         Salsa.setBackground(new java.awt.Color(-1,true));
         Salsa.setForeground(new java.awt.Color(0, 51, 255));
         Salsa.setText("Salsa");
-        getContentPane().add(Salsa, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 80, -1));
+        getContentPane().add(Salsa, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 260, 80, -1));
 
         Pop.setForeground(new java.awt.Color(0, 0, 255));
         Pop.setText("Pop");
-        getContentPane().add(Pop, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 80, -1));
+        getContentPane().add(Pop, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 290, 80, -1));
 
         Reggaeton.setForeground(new java.awt.Color(0, 0, 255));
         Reggaeton.setText("Reggaeton");
-        getContentPane().add(Reggaeton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, -1, -1));
+        getContentPane().add(Reggaeton, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, -1, -1));
 
         Gaita.setForeground(new java.awt.Color(0, 0, 255));
         Gaita.setText("Gaita");
-        getContentPane().add(Gaita, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 80, -1));
+        getContentPane().add(Gaita, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 290, 80, -1));
 
         Joropo.setForeground(new java.awt.Color(0, 0, 255));
         Joropo.setText("Joropo");
-        getContentPane().add(Joropo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 80, -1));
+        getContentPane().add(Joropo, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 320, 80, -1));
 
         pais_grupo.add(pais1);
         pais1.setForeground(new java.awt.Color(0, 255, 51));
         pais1.setText("China");
-        getContentPane().add(pais1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, -1, -1));
+        getContentPane().add(pais1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, -1, -1));
 
         pais_grupo.add(pais2);
         pais2.setForeground(new java.awt.Color(0, 255, 51));
         pais2.setText("Colombia");
-        getContentPane().add(pais2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, -1, -1));
+        getContentPane().add(pais2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, -1, -1));
 
         pais_grupo.add(pais3);
         pais3.setForeground(new java.awt.Color(0, 255, 51));
         pais3.setText("Perú");
-        getContentPane().add(pais3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 290, -1, -1));
+        getContentPane().add(pais3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, -1, -1));
 
         pais_grupo.add(pais4);
         pais4.setForeground(new java.awt.Color(0, 255, 51));
         pais4.setText("Nicaragua");
-        getContentPane().add(pais4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, -1, -1));
+        getContentPane().add(pais4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, -1, -1));
 
         pais_grupo.add(pais5);
         pais5.setForeground(new java.awt.Color(0, 255, 0));
         pais5.setText("Italia");
-        getContentPane().add(pais5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, -1, -1));
+        getContentPane().add(pais5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, -1, -1));
 
         pais_grupo.add(pais6);
         pais6.setForeground(new java.awt.Color(0, 255, 51));
         pais6.setText("Polonia");
-        getContentPane().add(pais6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, -1, -1));
+        getContentPane().add(pais6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, -1, -1));
 
         pais_grupo.add(pais7);
         pais7.setForeground(new java.awt.Color(0, 255, 51));
         pais7.setText("Reino Unido");
-        getContentPane().add(pais7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, -1, -1));
+        getContentPane().add(pais7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, -1, -1));
 
         pais_grupo.add(pais8);
         pais8.setForeground(new java.awt.Color(0, 255, 51));
         pais8.setText("Japón");
-        getContentPane().add(pais8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, -1, -1));
+        getContentPane().add(pais8, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, -1, -1));
 
         btn_cerrar.setText("Cerrar");
         btn_cerrar.addActionListener(new java.awt.event.ActionListener() {
@@ -190,14 +194,14 @@ public class ventana_principal extends javax.swing.JFrame {
                 cerrar_programa(evt);
             }
         });
-        getContentPane().add(btn_cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 10, -1, -1));
+        getContentPane().add(btn_cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, -1, -1));
 
         edad.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 edad_limitador(evt);
             }
         });
-        getContentPane().add(edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 200, 33));
+        getContentPane().add(edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 200, 33));
 
         nombre.setToolTipText("No se puede agregar mas de 8 caracteres.");
         nombre.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -205,31 +209,31 @@ public class ventana_principal extends javax.swing.JFrame {
                 nombre_limitador(evt);
             }
         });
-        getContentPane().add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 200, 33));
+        getContentPane().add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 200, 33));
 
         apellido.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 apellido_limitador(evt);
             }
         });
-        getContentPane().add(apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 200, 33));
+        getContentPane().add(apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 200, 33));
 
         direccion.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 direccion_limitador(evt);
             }
         });
-        getContentPane().add(direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, 200, 33));
+        getContentPane().add(direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 200, 33));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 14));
         jLabel5.setForeground(new java.awt.Color(-1,true));
-        jLabel5.setText("           Gustos musicales");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 170, -1));
+        jLabel5.setText("Información del pais:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 170, -1));
 
         jLabel6.setFont(new java.awt.Font("DialogInput", 0, 14));
         jLabel6.setForeground(new java.awt.Color(-1,true));
         jLabel6.setText("Nivel de estudios");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 170, 150, 20));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, 150, 20));
 
         enviar.setText("Enviar");
         enviar.addActionListener(new java.awt.event.ActionListener() {
@@ -237,7 +241,7 @@ public class ventana_principal extends javax.swing.JFrame {
                 ejecutar_resultado(evt);
             }
         });
-        getContentPane().add(enviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 450, 140, 40));
+        getContentPane().add(enviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, 140, 40));
 
         limpiar.setText("Limpiar");
         limpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -245,36 +249,47 @@ public class ventana_principal extends javax.swing.JFrame {
                 limpiar_datos(evt);
             }
         });
-        getContentPane().add(limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 450, 130, 40));
+        getContentPane().add(limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 440, 130, 40));
+
+        jLabel7.setFont(new java.awt.Font("Dialog", 0, 14));
+        jLabel7.setForeground(new java.awt.Color(-1,true));
+        jLabel7.setText("Gustos musicales");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 230, 170, -1));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        txt_pais.setViewportView(jTextArea1);
+
+        getContentPane().add(txt_pais, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 360, 190));
 
         datos.setColumns(20);
         datos.setRows(5);
-        jScrollPane2.setViewportView(datos);
+        txt_datos.setViewportView(datos);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 320, 350, 123));
+        getContentPane().add(txt_datos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 230, 130));
 
         Edad.setForeground(new java.awt.Color(-1,true));
         Edad.setText("       Edad");
-        getContentPane().add(Edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 79, -1));
+        getContentPane().add(Edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 79, -1));
 
         Nombre.setForeground(new java.awt.Color(-1,true));
         Nombre.setText("      Nombre");
-        getContentPane().add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 80, -1));
+        getContentPane().add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 80, -1));
 
         Apellido.setForeground(new java.awt.Color(-1,true));
         Apellido.setText("     Apellido");
-        getContentPane().add(Apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 62, -1));
+        getContentPane().add(Apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 62, -1));
 
         Direccion.setForeground(new java.awt.Color(-1,true));
-        Direccion.setText("     Dirección");
-        getContentPane().add(Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 78, -1));
+        Direccion.setText("     Datos:");
+        getContentPane().add(Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 78, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/When.PNG"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 510));
 
-        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -1, 900, 510));
+        Direccion1.setForeground(new java.awt.Color(-1,true));
+        Direccion1.setText("     Dirección");
+        getContentPane().add(Direccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 78, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -309,12 +324,12 @@ Una vez indetificado el caso de ambos, tomara las medidas adecuadas
 // Verifacacion de la edad
 if(var1 < 18) {
     getToolkit().beep();
-    objeto.mensaje("Los menores de 18 años no pueden registrarse");
+    jop.mensaje("Los menores de 18 años no pueden registrarse");
     edad.setText("");
     datos.setText("");
 } else if(var1 > 60) {
     getToolkit().beep();
-    objeto.mensaje("Los mayores a 60 años no pueden registrarse");
+    jop.mensaje("Los mayores a 60 años no pueden registrarse");
     edad.setText("");
     datos.setText("");
 }
@@ -335,7 +350,7 @@ Fin de debugger
 private void nombre_limitador(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombre_limitador
 char c = evt.getKeyChar();
 if(!(Character.isAlphabetic(c) || (c==KeyEvent.VK_SPACE) || (c==KeyEvent.VK_DELETE) || (c==KeyEvent.VK_PERIOD) || (c==KeyEvent.VK_BACK_SPACE)  )) {
-    objeto.mensaje("No puedes ingresar numeros en este campo");
+    jop.mensaje("No puedes ingresar numeros en este campo");
     getToolkit().beep(); 
     evt.consume();
    }
@@ -344,7 +359,7 @@ if(!(Character.isAlphabetic(c) || (c==KeyEvent.VK_SPACE) || (c==KeyEvent.VK_DELE
 private void edad_limitador(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_edad_limitador
 char c = evt.getKeyChar();
 if(!(Character.isDigit(c) || (c==KeyEvent.VK_SPACE) || (c==KeyEvent.VK_DELETE) || (c==KeyEvent.VK_BACK_SPACE)  )) {
-    objeto.mensaje("No puedes ingresar letras en este campo");
+    jop.mensaje("No puedes ingresar letras en este campo");
     getToolkit().beep(); 
     evt.consume(); 
    }
@@ -353,7 +368,7 @@ if(!(Character.isDigit(c) || (c==KeyEvent.VK_SPACE) || (c==KeyEvent.VK_DELETE) |
     private void apellido_limitador(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_apellido_limitador
 char c = evt.getKeyChar();
 if(!(Character.isAlphabetic(c) || (c==KeyEvent.VK_SPACE) || (c==KeyEvent.VK_DELETE) || (c==KeyEvent.VK_PERIOD) || (c==KeyEvent.VK_BACK_SPACE)  )) {
-    objeto.mensaje("No puedes ingresar numeros en este campo");
+    jop.mensaje("No puedes ingresar numeros en este campo");
     getToolkit().beep(); 
     evt.consume();
 }
@@ -362,7 +377,7 @@ if(!(Character.isAlphabetic(c) || (c==KeyEvent.VK_SPACE) || (c==KeyEvent.VK_DELE
     private void direccion_limitador(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_direccion_limitador
 char c = evt.getKeyChar();
 if(!(Character.isAlphabetic(c) || (c==KeyEvent.VK_SPACE) || (c==KeyEvent.VK_DELETE) || (c==KeyEvent.VK_PERIOD) || (c==KeyEvent.VK_BACK_SPACE)  )) {
-    objeto.mensaje("No puedes ingresar numeros en este campo");
+    jop.mensaje("No puedes ingresar numeros en este campo");
     getToolkit().beep(); 
     evt.consume();
 }
@@ -379,7 +394,7 @@ datos.setText("");
 
 // Mensaje de tarea completada
 getToolkit().beep(); 
-objeto.mensaje("Limpieza exitosa");
+jop.mensaje("Limpieza exitosa");
 }//GEN-LAST:event_limpiar_datos
 
     private void cerrar_programa(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrar_programa
@@ -412,7 +427,7 @@ objeto.mensaje("Limpieza exitosa");
             java.util.logging.Logger.getLogger(ventana_principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-    objeto.mensaje("Bienvenido al programa de registro.");
+    jop.mensaje("Bienvenido al programa de registro.");
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
 
@@ -428,6 +443,7 @@ objeto.mensaje("Limpieza exitosa");
     private javax.swing.JLabel Bienvenida;
     private javax.swing.JComboBox Comida;
     private javax.swing.JLabel Direccion;
+    private javax.swing.JLabel Direccion1;
     private javax.swing.JLabel Edad;
     private javax.swing.JCheckBox Gaita;
     private javax.swing.JCheckBox Joropo;
@@ -451,8 +467,8 @@ objeto.mensaje("Limpieza exitosa");
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton limpiar;
     private javax.swing.JTextField nombre;
     private javax.swing.JRadioButton pais1;
@@ -464,5 +480,7 @@ objeto.mensaje("Limpieza exitosa");
     private javax.swing.JRadioButton pais7;
     private javax.swing.JRadioButton pais8;
     private javax.swing.ButtonGroup pais_grupo;
+    private javax.swing.JScrollPane txt_datos;
+    private javax.swing.JScrollPane txt_pais;
     // End of variables declaration//GEN-END:variables
 }
