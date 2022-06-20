@@ -11,6 +11,9 @@ public class ventana_principal extends javax.swing.JFrame {
     
  static POO jop = new POO();
  static swich sc = new swich();
+ static String contenedora ="";
+ static String contenedorb ="";
+ 
     public ventana_principal() {
         initComponents();
         
@@ -70,6 +73,7 @@ public class ventana_principal extends javax.swing.JFrame {
         enviar = new javax.swing.JButton();
         limpiar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        Direccion1 = new javax.swing.JLabel();
         btn_for = new javax.swing.JButton();
         txt_pais = new javax.swing.JScrollPane();
         textarea_pais = new javax.swing.JTextArea();
@@ -80,7 +84,6 @@ public class ventana_principal extends javax.swing.JFrame {
         Apellido = new javax.swing.JLabel();
         Direccion = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        Direccion1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(-4144960,true));
@@ -177,7 +180,7 @@ public class ventana_principal extends javax.swing.JFrame {
                 pais3_click(evt);
             }
         });
-        getContentPane().add(pais3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, -1, -1));
+        getContentPane().add(pais3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, -1, -1));
 
         pais_grupo.add(pais4);
         pais4.setForeground(new java.awt.Color(0, 255, 0));
@@ -187,7 +190,7 @@ public class ventana_principal extends javax.swing.JFrame {
                 pais4_click(evt);
             }
         });
-        getContentPane().add(pais4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, -1, -1));
+        getContentPane().add(pais4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 160, -1, -1));
 
         pais_grupo.add(pais5);
         pais5.setForeground(new java.awt.Color(0, 255, 51));
@@ -297,7 +300,16 @@ public class ventana_principal extends javax.swing.JFrame {
         jLabel7.setText("Gustos musicales");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 230, 170, -1));
 
+        Direccion1.setForeground(new java.awt.Color(-1,true));
+        Direccion1.setText("     Dirección");
+        getContentPane().add(Direccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 78, -1));
+
         btn_for.setText("FOR");
+        btn_for.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                for_ejecucion(evt);
+            }
+        });
         getContentPane().add(btn_for, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 70, 40));
 
         textarea_pais.setEditable(false);
@@ -306,7 +318,7 @@ public class ventana_principal extends javax.swing.JFrame {
         textarea_pais.setRows(5);
         txt_pais.setViewportView(textarea_pais);
 
-        getContentPane().add(txt_pais, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 360, 190));
+        getContentPane().add(txt_pais, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 360, 210));
 
         datos.setEditable(false);
         datos.setColumns(20);
@@ -334,64 +346,11 @@ public class ventana_principal extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/When.PNG"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 510));
 
-        Direccion1.setForeground(new java.awt.Color(-1,true));
-        Direccion1.setText("     Dirección");
-        getContentPane().add(Direccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 78, -1));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 
     
-private void ejecutar_resultado(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ejecutar_resultado
-
-// Declaración de variables contenedoras
-String var2;    // Nombre
-String var3;    // Apellido
-String var4;    // Direccion
-     
-// Recolección de valores
-String cnt_var1 = edad.getText();      // Variable contenedora
-int var1 = Integer.parseInt(cnt_var1); // Transformación de String a int
-// ---
-var2= nombre.getText();
-var3= apellido.getText();         
-var4= direccion.getText();
-
-/*
-=====================
-Inicio de debugger
-=====================
-Este algoritmo ejecutara varios procesos para verificar dos requisitos, la edad y longitud del nombre.
-Una vez indetificado el caso de ambos, tomara las medidas adecuadas
-*/
-
-// Verifacacion de la edad
-if(var1 < 18) {
-    getToolkit().beep();
-    jop.mensaje("Los menores de 18 años no pueden registrarse");
-    edad.setText("");
-    datos.setText("");
-} else if(var1 > 60) {
-    getToolkit().beep();
-    jop.mensaje("Los mayores a 60 años no pueden registrarse");
-    edad.setText("");
-    datos.setText("");
-}
-if(var1 >18 && var1 < 60){
-    edad.setText("");
-    datos.setText(var1 +"\r\n" + var2 +"\r\n"+ var3 +"\r\n"+ var4);
-}
-
-/*
-=====================
-Fin de debugger
-=====================
-*/
-
-//datos.setText(var1 + "\r\n" + var2 + "\r\n" + var3 + "\r\n" + var4);
-}//GEN-LAST:event_ejecutar_resultado
-
 private void nombre_limitador(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombre_limitador
 char c = evt.getKeyChar();
 if(!(Character.isAlphabetic(c) || (c==KeyEvent.VK_SPACE) || (c==KeyEvent.VK_DELETE) || (c==KeyEvent.VK_PERIOD) || (c==KeyEvent.VK_BACK_SPACE)  )) {
@@ -494,6 +453,67 @@ jop.mensaje("Limpieza exitosa");
         sc.paises(8);
         textarea_pais.setText(sc.res);
     }//GEN-LAST:event_pais8_click
+
+    private void ejecutar_resultado(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ejecutar_resultado
+
+// Declaración de variables contenedoras
+String var2;    // Nombre
+String var3;    // Apellido
+String var4;    // Direccion
+     
+// Recolección de valores
+String cnt_var1 = edad.getText();      // Variable contenedora
+int var1 = Integer.parseInt(cnt_var1); // Transformación de String a int
+// ---
+var2= nombre.getText();
+var3= apellido.getText();         
+var4= direccion.getText();
+
+/*
+=====================
+Inicio de debugger
+=====================
+Este algoritmo ejecutara varios procesos para verificar dos requisitos, la edad y longitud del nombre.
+Una vez indetificado el caso de ambos, tomara las medidas adecuadas
+*/
+
+// Verifacacion de la edad
+if(var1 < 18) {
+    getToolkit().beep();
+    jop.mensaje("Los menores de 18 años no pueden registrarse");
+    edad.setText("");
+    datos.setText("");
+} else if(var1 > 60) {
+    getToolkit().beep();
+    jop.mensaje("Los mayores a 60 años no pueden registrarse");
+    edad.setText("");
+    datos.setText("");
+}
+if(var1 >18 && var1 < 60){
+    edad.setText("");
+    datos.setText(var1 +"\r\n" + var2 + "\r\n" + var3 +"\r\n" + var4 +"\r\n" + "\r\n");
+}
+
+/*
+=====================
+Fin de debugger
+=====================
+*/
+
+//datos.setText(var1 + "\r\n" + var2 + "\r\n" + var3 + "\r\n" + var4);
+    }//GEN-LAST:event_ejecutar_resultado
+
+    private void for_ejecucion(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_for_ejecucion
+for(int i=5; i<51; i++ ){
+       contenedora += "\n"+ i;
+      }
+
+      for(int i=50; i>=5; i--){
+      contenedorb += "\n" + i;
+      }
+      jop.mensaje(contenedora);
+          jop.mensaje(contenedorb);
+    }//GEN-LAST:event_for_ejecucion
 
     /**
      * @param args the command line arguments
