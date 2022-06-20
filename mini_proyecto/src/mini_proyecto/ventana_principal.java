@@ -52,7 +52,7 @@ public class ventana_principal extends javax.swing.JFrame {
         Reggaeton = new javax.swing.JCheckBox();
         Gaita = new javax.swing.JCheckBox();
         Joropo = new javax.swing.JCheckBox();
-        pais1 = new javax.swing.JRadioButton();
+        pais1_click = new javax.swing.JRadioButton();
         pais2 = new javax.swing.JRadioButton();
         pais3 = new javax.swing.JRadioButton();
         pais4 = new javax.swing.JRadioButton();
@@ -70,8 +70,9 @@ public class ventana_principal extends javax.swing.JFrame {
         enviar = new javax.swing.JButton();
         limpiar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        btn_for = new javax.swing.JButton();
         txt_pais = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        textarea_pais = new javax.swing.JTextArea();
         txt_datos = new javax.swing.JScrollPane();
         datos = new javax.swing.JTextArea();
         Edad = new javax.swing.JLabel();
@@ -88,7 +89,7 @@ public class ventana_principal extends javax.swing.JFrame {
         Bienvenida.setFont(new java.awt.Font("Monospaced", 1, 24));
         Bienvenida.setForeground(new java.awt.Color(-1,true));
         Bienvenida.setText("¡Bienvenido, usuario!, registra tus datos aquí.");
-        getContentPane().add(Bienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 770, 40));
+        getContentPane().add(Bienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 770, 40));
 
         jLabel4.setFont(new java.awt.Font("DialogInput", 0, 14));
         jLabel4.setForeground(new java.awt.Color(-1,true));
@@ -148,45 +149,85 @@ public class ventana_principal extends javax.swing.JFrame {
         Joropo.setText("Joropo");
         getContentPane().add(Joropo, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 320, 80, -1));
 
-        pais_grupo.add(pais1);
-        pais1.setForeground(new java.awt.Color(0, 255, 51));
-        pais1.setText("China");
-        getContentPane().add(pais1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, -1, -1));
+        pais_grupo.add(pais1_click);
+        pais1_click.setForeground(new java.awt.Color(0, 255, 51));
+        pais1_click.setText("Colombia");
+        pais1_click.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pais1_click(evt);
+            }
+        });
+        getContentPane().add(pais1_click, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, -1, -1));
 
         pais_grupo.add(pais2);
         pais2.setForeground(new java.awt.Color(0, 255, 51));
-        pais2.setText("Colombia");
-        getContentPane().add(pais2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, -1, -1));
+        pais2.setText("Perú");
+        pais2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pais2_click(evt);
+            }
+        });
+        getContentPane().add(pais2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, -1, -1));
 
         pais_grupo.add(pais3);
         pais3.setForeground(new java.awt.Color(0, 255, 51));
-        pais3.setText("Perú");
-        getContentPane().add(pais3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, -1, -1));
+        pais3.setText("Brasil");
+        pais3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pais3_click(evt);
+            }
+        });
+        getContentPane().add(pais3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, -1, -1));
 
         pais_grupo.add(pais4);
-        pais4.setForeground(new java.awt.Color(0, 255, 51));
-        pais4.setText("Nicaragua");
-        getContentPane().add(pais4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, -1, -1));
+        pais4.setForeground(new java.awt.Color(0, 255, 0));
+        pais4.setText("Italia");
+        pais4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pais4_click(evt);
+            }
+        });
+        getContentPane().add(pais4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, -1, -1));
 
         pais_grupo.add(pais5);
-        pais5.setForeground(new java.awt.Color(0, 255, 0));
-        pais5.setText("Italia");
-        getContentPane().add(pais5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, -1, -1));
+        pais5.setForeground(new java.awt.Color(0, 255, 51));
+        pais5.setText("Polonia");
+        pais5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pais5_click(evt);
+            }
+        });
+        getContentPane().add(pais5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, -1, -1));
 
         pais_grupo.add(pais6);
         pais6.setForeground(new java.awt.Color(0, 255, 51));
-        pais6.setText("Polonia");
-        getContentPane().add(pais6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, -1, -1));
+        pais6.setText("Reino Unido");
+        pais6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pais6_click(evt);
+            }
+        });
+        getContentPane().add(pais6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, -1, -1));
 
         pais_grupo.add(pais7);
         pais7.setForeground(new java.awt.Color(0, 255, 51));
-        pais7.setText("Reino Unido");
-        getContentPane().add(pais7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, -1, -1));
+        pais7.setText("Japón");
+        pais7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pais7_click(evt);
+            }
+        });
+        getContentPane().add(pais7, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, -1, -1));
 
         pais_grupo.add(pais8);
         pais8.setForeground(new java.awt.Color(0, 255, 51));
-        pais8.setText("Japón");
-        getContentPane().add(pais8, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, -1, -1));
+        pais8.setText("China");
+        pais8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pais8_click(evt);
+            }
+        });
+        getContentPane().add(pais8, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, -1, -1));
 
         btn_cerrar.setText("Cerrar");
         btn_cerrar.addActionListener(new java.awt.event.ActionListener() {
@@ -256,12 +297,18 @@ public class ventana_principal extends javax.swing.JFrame {
         jLabel7.setText("Gustos musicales");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 230, 170, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        txt_pais.setViewportView(jTextArea1);
+        btn_for.setText("FOR");
+        getContentPane().add(btn_for, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 70, 40));
+
+        textarea_pais.setEditable(false);
+        textarea_pais.setColumns(20);
+        textarea_pais.setLineWrap(true);
+        textarea_pais.setRows(5);
+        txt_pais.setViewportView(textarea_pais);
 
         getContentPane().add(txt_pais, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 360, 190));
 
+        datos.setEditable(false);
         datos.setColumns(20);
         datos.setRows(5);
         txt_datos.setViewportView(datos);
@@ -318,8 +365,6 @@ Inicio de debugger
 Este algoritmo ejecutara varios procesos para verificar dos requisitos, la edad y longitud del nombre.
 Una vez indetificado el caso de ambos, tomara las medidas adecuadas
 */
-
- 
 
 // Verifacacion de la edad
 if(var1 < 18) {
@@ -391,6 +436,7 @@ nombre.setText("");
 apellido.setText("");
 direccion.setText("");
 datos.setText("");
+textarea_pais.setText("");
 
 // Mensaje de tarea completada
 getToolkit().beep(); 
@@ -400,6 +446,54 @@ jop.mensaje("Limpieza exitosa");
     private void cerrar_programa(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrar_programa
          System.exit(0);
     }//GEN-LAST:event_cerrar_programa
+
+    private void pais1_click(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pais1_click
+        jop.mensaje("País elegido: Colombia");
+        sc.paises(1);
+        textarea_pais.setText(sc.res);
+    }//GEN-LAST:event_pais1_click
+
+    private void pais2_click(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pais2_click
+        jop.mensaje("País elegido: Perú");
+        sc.paises(2);
+        textarea_pais.setText(sc.res);
+    }//GEN-LAST:event_pais2_click
+
+    private void pais3_click(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pais3_click
+        jop.mensaje("País elegido: Brasil");
+        sc.paises(3);
+        textarea_pais.setText(sc.res);
+    }//GEN-LAST:event_pais3_click
+
+    private void pais4_click(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pais4_click
+        jop.mensaje("País elegido: Italia");
+        sc.paises(4);
+        textarea_pais.setText(sc.res);
+    }//GEN-LAST:event_pais4_click
+
+    private void pais5_click(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pais5_click
+        jop.mensaje("País elegido: Polonia");
+        sc.paises(5);
+        textarea_pais.setText(sc.res);
+    }//GEN-LAST:event_pais5_click
+
+    private void pais6_click(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pais6_click
+        jop.mensaje("País elegido: Reino Unido");
+        sc.paises(6);
+        textarea_pais.setText(sc.res);
+    }//GEN-LAST:event_pais6_click
+
+    private void pais7_click(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pais7_click
+        jop.mensaje("País elegido: Japón");
+        sc.paises(7);
+        textarea_pais.setText(sc.res);
+    }//GEN-LAST:event_pais7_click
+
+    private void pais8_click(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pais8_click
+        jop.mensaje("País elegido: China");
+        sc.paises(8);
+        textarea_pais.setText(sc.res);
+    }//GEN-LAST:event_pais8_click
 
     /**
      * @param args the command line arguments
@@ -457,6 +551,7 @@ jop.mensaje("Limpieza exitosa");
     private javax.swing.JRadioButton Superior;
     private javax.swing.JTextField apellido;
     private javax.swing.JButton btn_cerrar;
+    private javax.swing.JButton btn_for;
     private javax.swing.JTextArea datos;
     private javax.swing.JTextField direccion;
     private javax.swing.JTextField edad;
@@ -468,10 +563,9 @@ jop.mensaje("Limpieza exitosa");
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton limpiar;
     private javax.swing.JTextField nombre;
-    private javax.swing.JRadioButton pais1;
+    private javax.swing.JRadioButton pais1_click;
     private javax.swing.JRadioButton pais2;
     private javax.swing.JRadioButton pais3;
     private javax.swing.JRadioButton pais4;
@@ -480,6 +574,7 @@ jop.mensaje("Limpieza exitosa");
     private javax.swing.JRadioButton pais7;
     private javax.swing.JRadioButton pais8;
     private javax.swing.ButtonGroup pais_grupo;
+    private javax.swing.JTextArea textarea_pais;
     private javax.swing.JScrollPane txt_datos;
     private javax.swing.JScrollPane txt_pais;
     // End of variables declaration//GEN-END:variables
