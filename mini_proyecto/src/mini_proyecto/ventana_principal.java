@@ -2,6 +2,7 @@
 package mini_proyecto;
 
 // Librerias
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.lang.String;
 import javax.swing.*;
@@ -11,6 +12,18 @@ public class ventana_principal extends javax.swing.JFrame {
  static POO objeto = new POO();
     public ventana_principal() {
         initComponents();
+        
+        nombre.addKeyListener(new KeyAdapter(){
+           
+            @Override
+            public void keyTyped(KeyEvent evt){
+            
+            if (nombre.getText().length() >= 8){
+    evt.consume();
+
+}
+            }
+        });
     }
 
     /** This method is called from within the constructor to
