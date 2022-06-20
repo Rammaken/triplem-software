@@ -304,28 +304,25 @@ Este algoritmo ejecutara varios procesos para verificar dos requisitos, la edad 
 Una vez indetificado el caso de ambos, tomara las medidas adecuadas
 */
 
-// Verificación de la longitud del nombre
-if(nombre.getText().length()>8){
-    getToolkit().beep();
-    objeto.mensaje("No se puede insertar un nombre de mas de 8 caracteres");
-    nombre.setText("");
-    datos.setText("ERROR DE SINTAXIS");
-   } 
+ 
 
 // Verifacacion de la edad
 if(var1 < 18) {
     getToolkit().beep();
     objeto.mensaje("Los menores de 18 años no pueden registrarse");
     edad.setText("");
-    datos.setText("ERROR DE SINTAXIS");
+    datos.setText("");
 } else if(var1 > 60) {
     getToolkit().beep();
     objeto.mensaje("Los mayores a 60 años no pueden registrarse");
     edad.setText("");
-    datos.setText("ERROR DE SINTAXIS");
+    datos.setText("");
+}
+if(var1 >18 && var1 < 60){
+    edad.setText("");
+    datos.setText(var1 +"\r\n" + var2 +"\r\n"+ var3 +"\r\n"+ var4);
 }
 
-datos.setText(var1 + "\r\n" + var2 + "\r\n" + var3 + "\r\n" + var4);
 /*
 =====================
 Fin de debugger
