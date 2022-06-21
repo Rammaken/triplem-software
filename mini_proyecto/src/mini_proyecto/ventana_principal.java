@@ -8,7 +8,13 @@ import java.lang.String;
 import javax.swing.*;
 
 public class ventana_principal extends javax.swing.JFrame {   
-    
+ static String sa=""; 
+ static String joro=""; 
+ static String gai=""; 
+ static String rk=""; 
+ static String pp=""; 
+ static String regge=""; 
+ static String ed ="";
  static POO jop = new POO();
  static swich sc = new swich();
  static rdbtn_estudios estudios = new rdbtn_estudios();
@@ -500,23 +506,51 @@ Este algoritmo ejecutara varios procesos para verificar dos requisitos, la edad 
 Una vez indetificado el caso de ambos, tomara las medidas adecuadas
 */
 
-// Verifacacion de la edad
+// Verificacion de la edad
 if(var1 <=17) {
     getToolkit().beep();
     jop.mensaje("Los menores de 18 años no pueden registrarse");
-    edad.setText("");
-    datos.setText("");
+    edad.setText("");  
 } else if(var1 >=61) {
     getToolkit().beep();
     jop.mensaje("Los mayores a 60 años no pueden registrarse");
-    edad.setText("");
-    datos.setText("");
+    edad.setText("");  
 }
 if(var1 >=18 && var1 <= 60){
+    ed=edad.getText();
     edad.setText("");
-    datos.setText(var1 +"\r\n" + var2 + "\r\n" + var3 + "\r\n" + var4 + "\r\n\r\n" + "Nivel escolar:" + "\r\n" + estudios.estudio_res + "\r\n\r\n" + "Comida favorita:" + "\r\n" + var5 + "\r\n\r\n" + "Gustos:" + "\r\n");
 }
-
+if(Salsa.isSelected()){
+    sa=Salsa.getText();
+}else{
+    sa="";
+}
+if(Joropo.isSelected()){
+    joro=Joropo.getText();
+}else{
+    joro="";
+}
+if(Gaita.isSelected()){
+    gai=Gaita.getText();
+}else{
+    gai="";
+}
+if(Pop.isSelected()){
+    pp=Pop.getText();
+}else{
+    pp="";
+}
+if(Rock.isSelected()){
+    rk=Rock.getText();
+}else{
+    rk="";
+}
+if(Reggaeton.isSelected()){
+    regge=Reggaeton.getText();
+}else{
+    regge="";
+}
+ datos.setText(ed +"\r\n" + var2 + "\r\n" + var3 + "\r\n" + var4 + "\r\n\r\n" + "Nivel escolar:" + "\r\n" + rdbtn_estudios.estudio_res + "\r\n\r\n" + "Comida favorita:" + "\r\n" + var5 + "\r\n\r\n" + "Gustos:" + "\r\n" + sa + "\r\n" + regge + "\r\n" + pp + "\r\n" + gai + "\r\n"  + joro  + "\r\n" + rk  );
 /*
 =====================
 Fin de debugger

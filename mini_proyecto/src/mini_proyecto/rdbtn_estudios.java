@@ -1,7 +1,7 @@
 package mini_proyecto;
 
 public class rdbtn_estudios {
-    static String estudio_res = "default";
+    static String estudio_res = "No especificado";
     
     public String liceo(int option) {
         
