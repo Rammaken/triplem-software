@@ -3,7 +3,6 @@ import javax.swing.*;
 
 public class swich {
     static String res = "default";
-    static POO jop = new POO();
     
     public String paises(int option) {
         

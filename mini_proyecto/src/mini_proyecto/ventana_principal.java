@@ -11,6 +11,7 @@ public class ventana_principal extends javax.swing.JFrame {
     
  static POO jop = new POO();
  static swich sc = new swich();
+ static rdbtn_estudios estudios = new rdbtn_estudios();
  static String contenedora ="";
  static String contenedorb ="";
  
@@ -46,7 +47,7 @@ public class ventana_principal extends javax.swing.JFrame {
         Basica = new javax.swing.JRadioButton();
         Superior = new javax.swing.JRadioButton();
         Maestria = new javax.swing.JRadioButton();
-        Comida = new javax.swing.JComboBox();
+        combo_comida = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
         Secundaria = new javax.swing.JRadioButton();
         Rock = new javax.swing.JCheckBox();
@@ -102,20 +103,35 @@ public class ventana_principal extends javax.swing.JFrame {
         educ_grupo.add(Basica);
         Basica.setForeground(new java.awt.Color(0, 0, 255));
         Basica.setText("Basica");
+        Basica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radio_basica(evt);
+            }
+        });
         getContentPane().add(Basica, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 170, 100, -1));
 
         educ_grupo.add(Superior);
         Superior.setForeground(new java.awt.Color(0, 0, 255));
         Superior.setText("Superior");
+        Superior.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radio_superior(evt);
+            }
+        });
         getContentPane().add(Superior, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 170, 80, -1));
 
         educ_grupo.add(Maestria);
         Maestria.setForeground(new java.awt.Color(0, 0, 255));
         Maestria.setText("Maestría");
+        Maestria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radio_maestria(evt);
+            }
+        });
         getContentPane().add(Maestria, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 200, 80, -1));
 
-        Comida.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Spaghetti", "Pabellón", "Mandocas", "Choripan" }));
-        getContentPane().add(Comida, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 120, 160, -1));
+        combo_comida.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Spaghetti", "Pabellón", "Mandocas", "Choripan" }));
+        getContentPane().add(combo_comida, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 120, 160, -1));
 
         jLabel3.setFont(new java.awt.Font("DialogInput", 0, 12));
         jLabel3.setForeground(new java.awt.Color(-1,true));
@@ -125,6 +141,11 @@ public class ventana_principal extends javax.swing.JFrame {
         educ_grupo.add(Secundaria);
         Secundaria.setForeground(new java.awt.Color(0, 0, 255));
         Secundaria.setText("Secundaria");
+        Secundaria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radio_secundaria(evt);
+            }
+        });
         getContentPane().add(Secundaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 200, 100, -1));
 
         Rock.setForeground(new java.awt.Color(0, 0, 255));
@@ -460,10 +481,12 @@ jop.mensaje("Limpieza exitosa");
 String var2;    // Nombre
 String var3;    // Apellido
 String var4;    // Direccion
+String var5;
      
 // Recolección de valores
 String cnt_var1 = edad.getText();      // Variable contenedora
 int var1 = Integer.parseInt(cnt_var1); // Transformación de String a int
+var5 = (String)combo_comida.getSelectedItem();
 // ---
 var2= nombre.getText();
 var3= apellido.getText();         
@@ -478,20 +501,20 @@ Una vez indetificado el caso de ambos, tomara las medidas adecuadas
 */
 
 // Verifacacion de la edad
-if(var1 < 18) {
+if(var1 <=17) {
     getToolkit().beep();
     jop.mensaje("Los menores de 18 años no pueden registrarse");
     edad.setText("");
     datos.setText("");
-} else if(var1 > 60) {
+} else if(var1 >=61) {
     getToolkit().beep();
     jop.mensaje("Los mayores a 60 años no pueden registrarse");
     edad.setText("");
     datos.setText("");
 }
-if(var1 >18 && var1 < 60){
+if(var1 >=18 && var1 <= 60){
     edad.setText("");
-    datos.setText(var1 +"\r\n" + var2 + "\r\n" + var3 +"\r\n" + var4 +"\r\n" + "\r\n");
+    datos.setText(var1 +"\r\n" + var2 + "\r\n" + var3 + "\r\n" + var4 + "\r\n\r\n" + "Nivel escolar:" + "\r\n" + estudios.estudio_res + "\r\n\r\n" + "Comida favorita:" + "\r\n" + var5 + "\r\n\r\n" + "Gustos:" + "\r\n");
 }
 
 /*
@@ -499,8 +522,6 @@ if(var1 >18 && var1 < 60){
 Fin de debugger
 =====================
 */
-
-//datos.setText(var1 + "\r\n" + var2 + "\r\n" + var3 + "\r\n" + var4);
     }//GEN-LAST:event_ejecutar_resultado
 
     private void for_ejecucion(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_for_ejecucion
@@ -514,6 +535,22 @@ for(int i=5; i<51; i++ ){
       jop.mensaje(contenedora);
           jop.mensaje(contenedorb);
     }//GEN-LAST:event_for_ejecucion
+
+    private void radio_basica(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_basica
+        estudios.liceo(1);
+    }//GEN-LAST:event_radio_basica
+
+    private void radio_secundaria(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_secundaria
+        estudios.liceo(2);
+    }//GEN-LAST:event_radio_secundaria
+
+    private void radio_superior(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_superior
+        estudios.liceo(3);
+    }//GEN-LAST:event_radio_superior
+
+    private void radio_maestria(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radio_maestria
+        estudios.liceo(4);
+    }//GEN-LAST:event_radio_maestria
 
     /**
      * @param args the command line arguments
@@ -555,7 +592,6 @@ for(int i=5; i<51; i++ ){
     private javax.swing.JLabel Apellido;
     private javax.swing.JRadioButton Basica;
     private javax.swing.JLabel Bienvenida;
-    private javax.swing.JComboBox Comida;
     private javax.swing.JLabel Direccion;
     private javax.swing.JLabel Direccion1;
     private javax.swing.JLabel Edad;
@@ -572,6 +608,7 @@ for(int i=5; i<51; i++ ){
     private javax.swing.JTextField apellido;
     private javax.swing.JButton btn_cerrar;
     private javax.swing.JButton btn_for;
+    private javax.swing.JComboBox combo_comida;
     private javax.swing.JTextArea datos;
     private javax.swing.JTextField direccion;
     private javax.swing.JTextField edad;
